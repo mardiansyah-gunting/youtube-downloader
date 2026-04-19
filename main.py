@@ -3,19 +3,19 @@
 import yt_dlp
 
 def download_youtube_video(url):
-    # Konfigurasi opsi unduhan
+    
     ydl_opts = {
-        'format': 'best', # Mengunduh gabungan video dan audio kualitas terbaik
-        'outtmpl': '%(title)s.%(ext)s', # Menyimpan file dengan nama judul asli video
+        'format': 'best',
+        'outtmpl': '%(title)s.%(ext)s',
     }
 
     try:
-        print(f"Mengambil informasi dan mulai mengunduh dari: {url}")
+        print(f"Download from {url}")
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
-        print("\nUnduhan berhasil diselesaikan!")
+        print("\nSucces!")
     except Exception as e:
-        print(f"\nTerjadi kesalahan saat mengunduh: {e}")
+        print(f"\nError {e}")
 
 # youtube link
 url_video = 'https://youtu.be/hyGqAmfl0n8?si=iUumy4VDofmsZ2_Z' 
